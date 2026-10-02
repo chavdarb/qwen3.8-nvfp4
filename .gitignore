@@ -1,0 +1,14 @@
+# Python virtual environments
+.venv/
+venv/
+unsloth-nvfp4-env/
+
+# Local credentials
+API_KEY.txt
+.env
+
+# Runtime logs and Python cache files
+vllm_*.log
+__pycache__/
+*.py[cod]
+*.egg-info/

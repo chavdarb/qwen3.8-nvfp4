@@ -1,0 +1,14 @@
+vllm bench serve \
+  --backend openai-chat \
+  --base-url http://localhost:8000 \
+  --endpoint /v1/chat/completions \
+  --header "Authorization=Bearer $(cat API_KEY.txt)" \
+  --model Qwen3.8-27B-NVFP4 \
+  --tokenizer /data/huggingface/hub/models--gittensor-model-hub--Qwen3.8-27B-NVFP4-RTX5090/snapshots/0cc27958cefbbe231782ec8511de8c4eb5233348 \
+  --trust-remote-code \
+  --dataset-name random \
+  --random-input-len 2048 \
+  --random-output-len 2048 \
+  --num-prompts 20 \
+  --request-rate inf \
+  --max-concurrency 2
