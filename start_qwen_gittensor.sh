@@ -49,7 +49,7 @@ exec vllm serve \
   --compilation-config '{"cudagraph_mode": "PIECEWISE"}' \
   --mamba-cache-dtype bfloat16 \
   --mamba-ssm-cache-dtype bfloat16 \
-  --gpu_memory_utilization 0.95 \
+  --gpu_memory_utilization 0.9665 \
   --kv-cache-dtype fp8 \
   --enable-prefix-caching \
   --enable-chunked-prefill \

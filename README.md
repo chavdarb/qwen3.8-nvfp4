@@ -58,6 +58,8 @@ Run one launcher at a time; each stops existing processes matching `vllm serve` 
 
 Each script includes its own context length, cache, and speculative decoding settings. Review those options against available GPU memory before changing them.
 
+The Gittensor launcher uses `--gpu_memory_utilization 0.9665`. Its vLLM startup log recommended this value with CUDA-graph memory profiling enabled to preserve the intended KV-cache budget; higher values may leave too little headroom and cause out-of-memory errors.
+
 ## Benchmark
 
 With a server running, `./test_qwen.sh` runs `vllm bench serve` against `localhost:8000`. It requires `API_KEY.txt` and currently points its tokenizer at the Gittensor snapshot path used by `start_qwen_gittensor.sh`; update that path if needed. The benchmark's requested model name should match the model name advertised by the running server if the endpoint validates model names.
